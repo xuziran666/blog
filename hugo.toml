@@ -1,6 +1,6 @@
 baseURL = "https://xuziran666.github.io/blog/"
 languageCode = "zh-cn"
-defaultContentLanguage = "zh-cn" # 决定 i18n 翻译文件查找，zh-cn 匹配主题的 zh.yaml
+defaultContentLanguage = "zh-cn" # 决定 i18n 查找，需配套 i18n/zh-cn.yaml（Hugo 不会回退到 zh.yaml）
 title = "我的技术博客"
 theme = "PaperMod"
 enableRobotsTXT = true
