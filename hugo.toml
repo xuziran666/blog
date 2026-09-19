@@ -1,11 +1,75 @@
 baseURL = "https://xuziran666.github.io/blog/"
 languageCode = "zh-cn"
+defaultContentLanguage = "zh-cn" # 决定 i18n 翻译文件查找，zh-cn 匹配主题的 zh.yaml
 title = "我的技术博客"
 theme = "PaperMod"
 enableRobotsTXT = true
+
+# JSON 用于搜索页索引（layouts/index.json）
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
 
 [params]
   defaultTheme = "auto" # 跟随系统明暗
   ShowReadingTime = true
   ShowCodeCopyButtons = true
   ShowToc = true
+  ShowWordCount = true
+  ShowPostNavLinks = true # 文章底部上一篇/下一篇
+  ShowBreadCrumbs = true
+  ShowShareButtons = false
+  ShowFullTextinRSS = true
+  DateFormat = "2006年1月2日" # 主题读取 site.Params.DateFormat
+  description = "记录技术学习与思考的博客"
+  author = "xuziran666"
+
+  # 主题多处读取 params.mainSections，用于首页与归档的文章过滤
+  mainSections = ["posts"]
+
+  # 首页简介卡片
+  [params.homeInfoParams]
+    Title = "你好，欢迎来到我的博客 👋"
+    Content = """
+这里记录技术学习、踩坑与思考。
+
+- 使用 **Hugo** 构建，主题 **PaperMod**
+- 快捷键：`c` 目录 · `g` 返回顶部 · `t` 切换主题 · `/` 搜索
+"""
+    AlignSocialIconsTo = "center"
+
+  # 站内搜索（键名需小写，见主题 assets/js/fastsearch.js）
+  [params.fuseOpts]
+    iscasesensitive = false
+    threshold = 0.4
+    distance = 100
+    ignorelocation = true
+    minmatchcharlength = 1
+    limit = 20 # 搜索结果条数上限
+    keys = ["title", "permalink", "summary", "content"]
+
+  [[params.socialIcons]]
+    name = "github"
+    title = "GitHub"
+    url = "https://github.com/xuziran666"
+
+[menu]
+  [[menu.main]]
+    identifier = "posts" # 必需：header.html 用 KeyName 查页面 Layout
+    name = "文章"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    identifier = "archives"
+    name = "归档"
+    url = "/archives/"
+    weight = 20
+  [[menu.main]]
+    identifier = "tags"
+    name = "标签"
+    url = "/tags/"
+    weight = 30
+  [[menu.main]]
+    identifier = "search"
+    name = "搜索"
+    url = "/search/"
+    weight = 40
