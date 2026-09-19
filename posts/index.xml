@@ -1,2 +1,4 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on 我的技术博客</title><link>https://xuziran666.github.io/blog/posts/</link><description>Recent content in Posts on 我的技术博客</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 19 Sep 2026 10:00:00 +0800</lastBuildDate><atom:link href="https://xuziran666.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>第一篇Hugo博客</title><link>https://xuziran666.github.io/blog/posts/first-article/</link><pubDate>Sat, 19 Sep 2026 10:00:00 +0800</pubDate><guid>https://xuziran666.github.io/blog/posts/first-article/</guid><description>&lt;h1 id="hello-hugo"&gt;Hello Hugo&lt;/h1&gt;
-&lt;p&gt;这是我的第一篇博客文章，直接写Markdown。&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;这是我的第一篇博客文章，直接写Markdown。&lt;/p&gt;</description><content:encoded>&lt;h1 id="hello-hugo">Hello Hugo&lt;/h1>
+&lt;p>这是我的第一篇博客文章，直接写Markdown。&lt;/p>
+</content:encoded></item></channel></rss>
