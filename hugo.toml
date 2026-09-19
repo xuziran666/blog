@@ -1,0 +1,11 @@
+baseURL = "https://xuziran666.github.io/blog/"
+languageCode = "zh-cn"
+title = "我的技术博客"
+theme = "PaperMod"
+enableRobotsTXT = true
+
+[params]
+  defaultTheme = "auto" # 跟随系统明暗
+  ShowReadingTime = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
