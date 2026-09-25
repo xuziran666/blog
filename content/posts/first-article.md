@@ -5,5 +5,5 @@ draft: false # true=草稿，本地预览可见，打包不会发布
 ---
 
 # Hello Hugo
-这是我的第一篇博客文章，直接写Markdown。
+这是我的第一篇博客文章。
 
