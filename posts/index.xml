@@ -1,4 +1,177 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on 我的技术博客</title><link>https://xuziran666.github.io/blog/posts/</link><description>Recent content in Posts on 我的技术博客</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 19 Sep 2026 10:00:00 +0800</lastBuildDate><atom:link href="https://xuziran666.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>第一篇Hugo博客</title><link>https://xuziran666.github.io/blog/posts/first-article/</link><pubDate>Sat, 19 Sep 2026 10:00:00 +0800</pubDate><guid>https://xuziran666.github.io/blog/posts/first-article/</guid><description>&lt;h1 id="hello-hugo"&gt;Hello Hugo&lt;/h1&gt;
-&lt;p&gt;这是我的第一篇博客文章，直接写Markdown。&lt;/p&gt;</description><content:encoded>&lt;h1 id="hello-hugo">Hello Hugo&lt;/h1>
-&lt;p>这是我的第一篇博客文章，直接写Markdown。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on 我的技术博客</title><link>https://xuziran666.github.io/blog/posts/</link><description>Recent content in Posts on 我的技术博客</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 25 Sep 2026 08:00:00 +0800</lastBuildDate><atom:link href="https://xuziran666.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Mnemo：我给自己写了一个键盘优先的本地命令管理器</title><link>https://xuziran666.github.io/blog/posts/mnemo-introduction/</link><pubDate>Fri, 25 Sep 2026 08:00:00 +0800</pubDate><guid>https://xuziran666.github.io/blog/posts/mnemo-introduction/</guid><description>&lt;h1 id="mnemo告别记不住命令的烦恼"&gt;Mnemo：告别记不住命令的烦恼&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一个键盘优先的本地命令管理器。收藏常用 shell 命令，秒搜秒复制，一键回到终端。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;每次写代码或者折腾环境时，总会遇到那种“前两天刚用过，今天就死活想不起来”的复杂命令。翻历史记录太痛苦，存笔记里又太重。&lt;/p&gt;
+&lt;p&gt;于是我动手写了个小工具——&lt;strong&gt;Mnemo&lt;/strong&gt;。它的核心诉求很简单：&lt;strong&gt;键盘优先、本地优先、复制即走。&lt;/strong&gt; 不打断你原本的终端工作流，用完即焚。&lt;/p&gt;
+&lt;h2 id="-它能做什么"&gt;✨ 它能做什么？&lt;/h2&gt;
+&lt;p&gt;作为一个键盘党，我把所有高频操作都浓缩在了键盘上：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;本地优先，拒绝云端&lt;/strong&gt; — 所有数据保存在本地的 SQLite 数据库中，没有账号，没有云端同步。你的命令只属于你自己。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;秒级全文搜索&lt;/strong&gt; — 支持对标题、命令、备注、标签进行模糊搜索，敲个 &lt;code&gt;s&lt;/code&gt; 就能瞬间定位。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;极致的键盘流&lt;/strong&gt; — 按 &lt;code&gt;s&lt;/code&gt; 搜索，&lt;code&gt;↑&lt;/code&gt;/&lt;code&gt;↓&lt;/code&gt; 选择，&lt;code&gt;Enter&lt;/code&gt; 直接复制代码片段（或者打开知识笔记查看）。按 &lt;code&gt;r&lt;/code&gt; 编辑，&lt;code&gt;Ctrl+N&lt;/code&gt; / &lt;code&gt;Cmd+N&lt;/code&gt; 新建。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;复制即关闭&lt;/strong&gt; — 这是我最喜欢的设计！按下 &lt;code&gt;Enter&lt;/code&gt; 复制命令后，窗口自动关闭，命令已经在剪贴板里了。你的终端工作流完全不会被打断。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;不仅仅是代码片段&lt;/strong&gt; — 每条内容分为&lt;strong&gt;代码片段&lt;/strong&gt;（用于复制）与&lt;strong&gt;知识笔记&lt;/strong&gt;（用于查看）两种类型。它还支持富 Markdown 渲染：GFM 表格、KaTeX 数学公式、代码高亮全都有。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;沉浸式查看模式&lt;/strong&gt; — 按 &lt;code&gt;Enter&lt;/code&gt; 可以像 Quick Look 一样预览知识笔记（只读、无光标、无工具栏）。查看器内按 &lt;code&gt;Enter&lt;/code&gt; 可以直接原位进入编辑，&lt;code&gt;Ctrl+S&lt;/code&gt; 保存，&lt;code&gt;Esc&lt;/code&gt; 返回，行云流水。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="-怎么安装"&gt;📦 怎么安装？&lt;/h2&gt;
+&lt;h3 id="直接下载安装包"&gt;直接下载安装包&lt;/h3&gt;
+&lt;p&gt;前往 &lt;a href="https://github.com/xuziran666/Mnemo/releases"&gt;GitHub Releases&lt;/a&gt; 下载对应平台的包，开箱即用：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Linux&lt;/strong&gt;：AppImage / deb / rpm（支持 x86_64 和 aarch64）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Windows&lt;/strong&gt;：exe / msi&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;macOS&lt;/strong&gt;：dmg / app&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="arch-linuxaur用户"&gt;Arch Linux（AUR）用户&lt;/h3&gt;
+&lt;p&gt;即将上架：&lt;code&gt;mnemo-cm&lt;/code&gt;（源码编译版）和 &lt;code&gt;mnemo-cm-bin&lt;/code&gt;（预编译二进制版），AUR 党可以蹲一下。&lt;/p&gt;</description><content:encoded><![CDATA[<h1 id="mnemo告别记不住命令的烦恼">Mnemo：告别记不住命令的烦恼</h1>
+<blockquote>
+<p>一个键盘优先的本地命令管理器。收藏常用 shell 命令，秒搜秒复制，一键回到终端。</p>
+</blockquote>
+<p>每次写代码或者折腾环境时，总会遇到那种“前两天刚用过，今天就死活想不起来”的复杂命令。翻历史记录太痛苦，存笔记里又太重。</p>
+<p>于是我动手写了个小工具——<strong>Mnemo</strong>。它的核心诉求很简单：<strong>键盘优先、本地优先、复制即走。</strong> 不打断你原本的终端工作流，用完即焚。</p>
+<h2 id="-它能做什么">✨ 它能做什么？</h2>
+<p>作为一个键盘党，我把所有高频操作都浓缩在了键盘上：</p>
+<ul>
+<li><strong>本地优先，拒绝云端</strong> — 所有数据保存在本地的 SQLite 数据库中，没有账号，没有云端同步。你的命令只属于你自己。</li>
+<li><strong>秒级全文搜索</strong> — 支持对标题、命令、备注、标签进行模糊搜索，敲个 <code>s</code> 就能瞬间定位。</li>
+<li><strong>极致的键盘流</strong> — 按 <code>s</code> 搜索，<code>↑</code>/<code>↓</code> 选择，<code>Enter</code> 直接复制代码片段（或者打开知识笔记查看）。按 <code>r</code> 编辑，<code>Ctrl+N</code> / <code>Cmd+N</code> 新建。</li>
+<li><strong>复制即关闭</strong> — 这是我最喜欢的设计！按下 <code>Enter</code> 复制命令后，窗口自动关闭，命令已经在剪贴板里了。你的终端工作流完全不会被打断。</li>
+<li><strong>不仅仅是代码片段</strong> — 每条内容分为<strong>代码片段</strong>（用于复制）与<strong>知识笔记</strong>（用于查看）两种类型。它还支持富 Markdown 渲染：GFM 表格、KaTeX 数学公式、代码高亮全都有。</li>
+<li><strong>沉浸式查看模式</strong> — 按 <code>Enter</code> 可以像 Quick Look 一样预览知识笔记（只读、无光标、无工具栏）。查看器内按 <code>Enter</code> 可以直接原位进入编辑，<code>Ctrl+S</code> 保存，<code>Esc</code> 返回，行云流水。</li>
+</ul>
+<h2 id="-怎么安装">📦 怎么安装？</h2>
+<h3 id="直接下载安装包">直接下载安装包</h3>
+<p>前往 <a href="https://github.com/xuziran666/Mnemo/releases">GitHub Releases</a> 下载对应平台的包，开箱即用：</p>
+<ul>
+<li><strong>Linux</strong>：AppImage / deb / rpm（支持 x86_64 和 aarch64）</li>
+<li><strong>Windows</strong>：exe / msi</li>
+<li><strong>macOS</strong>：dmg / app</li>
+</ul>
+<h3 id="arch-linuxaur用户">Arch Linux（AUR）用户</h3>
+<p>即将上架：<code>mnemo-cm</code>（源码编译版）和 <code>mnemo-cm-bin</code>（预编译二进制版），AUR 党可以蹲一下。</p>
+<h3 id="自己动手编译">自己动手编译</h3>
+<p>如果你喜欢自己动手，或者想改点功能，需要准备好：<a href="https://nodejs.org">Node.js</a> 18+、<a href="https://pnpm.io">pnpm</a> 以及 <a href="https://rustup.rs">Rust</a>（stable）。</p>
+<p><em>踩坑提示：Linux 用户记得先装好 <a href="https://tauri.app/start/prerequisites/">Tauri 的系统依赖</a>（比如 <code>libwebkit2gtk-4.1-dev</code>、<code>librsvg2-dev</code> 等）。</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pnpm install
+</span></span><span style="display:flex;"><span>pnpm run tauri build
+</span></span></code></pre></div><h3 id="-快捷键速查表">⌨️ 快捷键速查表</h3>
+<p>为了让你最快上手，我整理了一份快捷键表：</p>
+<table>
+	<thead>
+			<tr>
+					<th>按键</th>
+					<th>功能</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>s</code></td>
+					<td>聚焦搜索框</td>
+			</tr>
+			<tr>
+					<td><code>↑</code> / <code>↓</code></td>
+					<td>在列表中移动选择</td>
+			</tr>
+			<tr>
+					<td><code>Enter</code></td>
+					<td>复制选中代码片段并关闭窗口，或打开知识笔记查看</td>
+			</tr>
+			<tr>
+					<td><code>c</code></td>
+					<td>复制选中代码片段并关闭窗口（仅代码片段）</td>
+			</tr>
+			<tr>
+					<td><code>v</code></td>
+					<td>查看选中命令</td>
+			</tr>
+			<tr>
+					<td><code>d</code></td>
+					<td>删除选中命令（需二次确认）</td>
+			</tr>
+			<tr>
+					<td><code>Esc</code></td>
+					<td>关闭窗口（列表中）</td>
+			</tr>
+			<tr>
+					<td><code>r</code></td>
+					<td>编辑选中命令</td>
+			</tr>
+			<tr>
+					<td><code>Ctrl+N</code> / <code>Cmd+N</code></td>
+					<td>新建命令</td>
+			</tr>
+			<tr>
+					<td><code>+</code></td>
+					<td>新建命令（鼠标）</td>
+			</tr>
+	</tbody>
+</table>
+<p><strong>进入查看器/编辑模式后：</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th>按键</th>
+					<th>功能</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>Enter</code></td>
+					<td>进入编辑（同一窗口）</td>
+			</tr>
+			<tr>
+					<td><code>Esc</code></td>
+					<td>返回搜索列表</td>
+			</tr>
+			<tr>
+					<td><code>Ctrl+S</code> / <code>Cmd+S</code></td>
+					<td>保存并返回查看</td>
+			</tr>
+			<tr>
+					<td><code>Esc</code></td>
+					<td>取消修改并返回查看</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="-开发与折腾">🛠️ 开发与折腾</h3>
+<p>如果你想在这个基础上二次开发，非常方便：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pnpm install          <span style="color:#75715e"># 安装依赖</span>
+</span></span><span style="display:flex;"><span>pnpm run tauri dev    <span style="color:#75715e"># 热重载开发</span>
+</span></span><span style="display:flex;"><span>pnpm run tauri build  <span style="color:#75715e"># 构建发布包</span>
+</span></span></code></pre></div><h3 id="-你的数据在哪里">💾 你的数据在哪里？</h3>
+<p>因为主打本地优先，所有数据都存在系统 app data 目录下的单个 SQLite 文件（commands.db）里。备份这个文件，就等于备份了你所有的命令，软件也自带数据导入导出功能。</p>
+<table>
+	<thead>
+			<tr>
+					<th>系统</th>
+					<th>路径</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Linux</td>
+					<td><code>~/.local/share/com.longanl.mnemo/commands.db</code></td>
+			</tr>
+			<tr>
+					<td>macOS</td>
+					<td><code>~/Library/Application Support/com.longanl.mnemo/commands.db</code></td>
+			</tr>
+			<tr>
+					<td>Windows</td>
+					<td><code>%APPDATA%\com.longanl.mnemo\commands.db</code></td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="-技术栈与感悟">🧰 技术栈与感悟</h3>
+<p>作为一个 Tauri 爱好者，这个项目依旧采用了我最喜欢的组合：</p>
+<p><a href="https://tauri.app/">Tauri 2</a> + <a href="https://rust-lang.org/">Rust</a>（极致轻量，内存占用极低）</p>
+<p><a href="https://react.dev/">React 19</a> + <a href="https://www.typescriptlang.org/">TypeScript</a> + <a href="https://vite.dev/">Vite</a>（丝滑的界面体验）</p>
+<p><a href="https://www.sqlite.org/">SQLite</a>（通过 <a href="https://github.com/rusqlite/rusqlite">rusqlite</a> 集成）（本地数据的安全感）</p>
+<p>没有 Electron 那种动辄几百兆的笨重，Tauri 配合系统原生的 WebView，让这个小工具在后台静静待命时几乎不占什么资源。</p>
+<h3 id="-许可证">📄 许可证</h3>
+<p>MIT - 随便玩，随意改。</p>
+<p>如果这个工具帮到了你，或者你也受够了记不住终端命令的苦恼，欢迎去 <a href="https://github.com/xuziran666/Mnemo">GitHub</a> 点个 Star 支持一下！有任何建议也欢迎随时提 Issue 交流。</p>
+]]></content:encoded></item><item><title>第一篇Hugo博客</title><link>https://xuziran666.github.io/blog/posts/first-article/</link><pubDate>Sat, 19 Sep 2026 10:00:00 +0800</pubDate><guid>https://xuziran666.github.io/blog/posts/first-article/</guid><description>&lt;h1 id="hello-hugo"&gt;Hello Hugo&lt;/h1&gt;
+&lt;p&gt;这是我的第一篇博客文章。&lt;/p&gt;</description><content:encoded>&lt;h1 id="hello-hugo">Hello Hugo&lt;/h1>
+&lt;p>这是我的第一篇博客文章。&lt;/p>
 </content:encoded></item></channel></rss>
